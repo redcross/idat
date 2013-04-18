@@ -1,0 +1,150 @@
+
+<div class="page da">
+  <div id='line1'>
+    <div id='header-text'>
+      <h1><img class="logo" src="sc_static('arcbalogo.jpg')" />Detailed Disaster Assessment</h1>
+    </div>
+  </div>
+  <div class="padding"></div>
+  <table>
+    <tr>
+      <td style="width: 30%; vertical-align: top;">
+        <table class="bordered">
+          <tr>
+            <td>
+              <label>Incident Number:</label><br />
+              <span>{{family.incident.incidentNumber}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Incident Date:</label><br />
+              <span>{{family.incident.formattedIncidentDate}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Incident Type:</label><br />
+              <span>{{lookup incidentTypes family.incident.incidentType}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Call Type:</label><br />
+              <span>Hot</span>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="width: 30%; vertical-align: top;">
+        <table class="bordered">
+          <tr>
+            <td>
+              <label>Client Name:</label><br />
+              <span>{{family.hohName}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Address:</label><br />
+              <span>{{family.streetNumber}} {{family.streetName}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Unit Number:</label><br />
+              <span>{{family.unitNumber}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>City/Zip:</label><br />
+              <span>{{family.city}} {{family.state}} {{family.zip}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Post-Disaster Phone:</label><br />
+              <span>{{family.preferredPhone}} ({{family.preferredPhoneType}})</span>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="width: 30%; vertical-align: top;">
+        <table class="bordered">
+          <tr>
+            <td colspan="2">
+              <label>Damage to the Unit:</label><br />
+              <span>{{lookup damageLevels unitDamage}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label>Utilities:</label><br />
+              <span>{{family.incident.formattedIncidentDate}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Gas:</td>
+            <td>{{lookup onOffUnknown gasOn}}</td>
+          </tr>
+          <tr>
+            <td>Electricity:</td>
+            <td>{{lookup onOffUnknown electricOn}}</td>
+          </tr>
+          <tr>
+            <td>Water:</td>
+            <td>{{lookup onOffUnknown waterOn}}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <h3>Bedrooms:</h3>
+  {{#staticeach bedrooms}}
+  <div class="padding"></div>
+  <table class="bordered">
+    <tr>
+      <th>Resident Name</th>
+      <th>Bed Size</th>
+      <th>Damage</th>
+      <th>Cause</th>
+      <th>Mattress</th>
+      <th>Frame</th>
+      <th>Clothes</th>
+      <th>Shoes</th>
+      <th>Pillows</th>
+      <th>Linens</th>
+    </tr>
+    <tr>
+      <td>{{residentName}}</td>
+      <td>{{lookup bedSizes bedSize}}</td>
+      <td>{{lookup damageLevels damageLevel}}</td>
+      <td>{{lookup damageCauses damageCause}}</td>
+      <td>{{lookup okCleanedDestroyed mattress}}</td>
+      <td>{{lookup okCleanedDestroyed bedframe}}</td>
+      <td>{{lookup okCleanedDestroyed clothesStatus}}</td>
+      <td>{{lookup okCleanedDestroyed shoesStatus}}</td>
+      <td>{{lookup okCleanedDestroyed pillowsStatus}}</td>
+      <td>{{lookup okCleanedDestroyed linensStatus}}</td>
+    </tr>
+    <tr><td colspan="10">Notes: {{notes}}</td></tr>
+  </table>
+  {{/staticeach}}
+  <div class="padding"></div>
+  <table class="fields">
+    <tr>
+      <th>Fresh Food:</th>
+      <td>{{lookup okCleanedDestroyed freshFoodStatus}}</td>
+      <th>Stored Food:</th>
+      <td>{{lookup okCleanedDestroyed storedFoodStatus}}</td>
+    </tr>
+  </table>
+  <h3>Sign Off</h3>
+  <table class="fields">
+    <tr>
+      <th>Completed By:</th>
+      <td>{{completedBy}}</td>
+    </td>
+  </table>
+</div>

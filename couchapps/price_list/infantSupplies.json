@@ -1,0 +1,8 @@
+{
+   "_id": "pl_infantSupplies",
+    "itemClass": 2,
+   "name": "Infant formula/supplies",
+   "issuedPerPerson": false,
+   "perFamilyPrice": 50,
+   "recordType": "Forms.CACPriceListItem"
+}

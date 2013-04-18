@@ -1,0 +1,97 @@
+.client-signature-pane {
+  background-color: white;
+  font-size: 14px;
+}
+
+.client-signature {
+  padding: 1em;
+
+  background-color: white;
+  font-size: 14px;
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-family: Akzidenz-Grotesk-Bold;
+    padding: 1em;
+    padding-bottom: .25em;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .sc-checkbox span {
+    padding-left: 5px;
+  }
+
+  em {
+    font-family: Akzidenz-Grotesk-Bold, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+
+  table {
+    border: none;
+
+    th, td {
+      border: none;
+      text-align: left;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 1em;
+      border-bottom: 1px solid black;
+    }
+
+    th {
+      white-space: nowrap;
+      font-family: Akzidenz-Grotesk-Bold, Helvetica, Arial, sans-serif;
+    }
+
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .hide.is-issuing-cacs, .hide.is-issuing {
+    display: table-row;
+  }
+  
+}
+
+.capture-client-signature {
+  background-color: white;
+  font-size: 14px;
+
+  .signature-instructions {
+    position: absolute;
+    width: 600px;
+    left: 50%; margin-left: -300px;
+    top: 0px;
+    bottom: 250px;
+  }
+
+  .text-container {
+    padding: 1em;
+  }
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+  p {
+    margin-top: 1em;
+  }
+  em {
+    font-family: Akzidenz-Grotesk-Bold, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+  .sc-view.sigPad {
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+}

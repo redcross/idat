@@ -1,0 +1,12 @@
+{
+   "_id": "chapter_chicago",
+   "name": "ARC Greater Chicago Region",
+   "code": "13302",
+   "counties": [
+       "county_chicago_all"
+   ],
+   "recordType": "Forms.Chapter",
+   "cacChapterAddress1": "American Red Cross of Greater Chicago",
+   "cacChapterAddress2": "2200 West Harrison Street",
+   "cacChapterAddress3": "Chicago, IL  60612"
+}

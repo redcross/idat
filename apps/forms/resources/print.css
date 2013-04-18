@@ -1,0 +1,496 @@
+sc_resource("print_css")
+
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+table.bordered {
+  th, td {
+    margin: 0;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  td:first-child, th:first-child {
+    border-left: 1px solid black;
+  }
+  tr:first-child td, tr:first-child th {
+    border-top: 1px solid black;
+  }
+}
+table.fields {
+  th {
+    font-weight: normal;
+    white-space: nowrap;
+    width: 1%;
+  }
+  td {
+    border-bottom: 1px solid black;
+    min-width: 80px;
+  } 
+}
+table.blockfields {
+  > tbody > tr > td {
+    border: 1px solid black;
+    height: 3em;
+    vertical-align: top;
+    text-align: center;
+    font-weight: bold;
+
+    padding: 5px;
+  
+    span {
+      line-height: 1.7;
+    }
+    label {
+      float: left;
+      font-weight: normal;
+    }
+  }
+}
+
+h1 {
+}
+
+.showmenot {
+  display: none !important;
+  width: 0; height: 0; overflow: hidden;
+}
+
+.sig-image {
+  z-index: -10;
+  position: relative;
+}
+
+.sig-image svg {
+  height: 100%;
+  padding: 5px;
+}
+
+.sig-image > svg path {
+  -webkit-transform-origin-x: 0;
+  -webkit-transform-origin-y: 0;
+}
+
+@media screen {
+  div.page {
+    border: 1px solid black;
+    
+    margin: .25in;
+  }
+}
+
+.page {
+  page-break-inside: avoid;
+  page-break-before: always;
+
+  width: 8.5in;
+  height: 11in;
+
+  &:first-child {
+    page-break-before: avoid;
+  }
+
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+}
+
+img.logo {
+  float: right;
+  height: 1in;
+  margin-right: -.25in;
+  margin-top: -.35in;
+  z-index: -10;
+}
+
+div.page.cactc {
+  .pdfwrapper {
+    position: relative;
+    height: 11in;
+    width: 8.5in;
+  }
+
+  .pdf {
+    overflow: hidden;
+  }
+
+  embed {
+    width: 9.5in;
+    height: 12.4in;
+    z-index: -21;
+    margin: -.7in -.5in;
+  }
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    .sig {
+      top: 90%;
+      position: absolute;
+      width: 2.5in;
+      height: .625in;
+      left: 25%;
+    }
+
+    .date {
+      position: absolute;
+      top: 93.1%;
+      left: 62.8%;
+    }
+  }
+}
+
+div.page.consent {
+  .pdfwrapper {
+    position: relative;
+    height: 11in;
+    width: 8.5in;
+  }
+
+  .pdf {
+    overflow: hidden;
+  }
+
+  embed {
+    width: 9.9in;
+    height: 12.4in;
+    z-index: -21;
+    margin: -0.5in -0.7in;
+  }
+
+  .overlay {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+
+    .tick {
+      position: absolute;
+      left: 5.7%;
+      top: 57.1%;
+    }
+
+    .agency {
+      position: absolute;
+      top: 65%;
+      left: 11.5%;
+    }
+
+    .name {
+      position: absolute;
+      top: 85.6%;
+      left: 32.5%;
+    }
+
+    .sig {
+      width: 3in;
+      height: .75in;
+      top: 86%;
+      position: absolute;
+      left: 30%;
+    }
+
+    .date {
+      position: absolute;
+      top: 93.9%;
+      left: 18%;
+    }
+  }
+}
+
+div.page.incident {
+
+  table.fields td {
+    min-width: inherit;
+  }
+
+  .affected td {
+    width: .6in;
+  }
+}
+
+div.page.da {
+  label {
+    font-weight: bold;
+  }
+  .padding {
+    margin-top: 1em;
+  }
+}
+
+div.page.registration {
+  .field {
+    taext-decoration: underline;
+    border-bottom: 1px solid black;
+  }
+  .blank {
+    min-width: .5in;
+  }
+  body {
+    width: 8.5in;
+    height: 11in;
+    margin: 0;
+    padding: .25in;
+    border: 1px solid black;
+    font-family: Helvetica, sans-serif;
+    font-size: 11pt;
+  }
+  em {
+    font-weight: bold;
+  }
+  td {
+    vertical-align: top;
+  }
+  span.field {
+    width: 100%;
+    dispalay: inline-block;
+  }
+  .disposition-legend {
+    border: 1px solid black;
+    border-bottom: 0;
+    widtha: 3in;
+    margin-left: auto;
+    padding: 0;
+  }
+  table { bordaer: 1px solid blue; width: 100%;
+    border-spacing: 0;
+    margin: 12px 0;
+  }
+  .disposition-legend table {
+    margin: 0;
+  }
+  .header, .content, .header th, .content td {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  #residents .content td:first-child, #residents th:first-child {
+    border-left: 1px solid black;
+  }
+  #residents .content td {
+    padding: 3px;
+  }
+  td, th {
+    margin: 0;
+
+  }
+  tr {
+    margin: 0;
+  }
+  tr.header th {
+    border-top: 1px solid black;
+  }
+  #footer-text {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 8pt;
+  }
+  #landlord {
+    float: right;
+    min-width: 3in;
+  }
+
+  #landlord table {
+    margin: 0;
+  }
+
+  .sig {
+    width: 100%;
+  }
+
+  .sig-label {
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  .sig-image.client-signature-image {
+    height: .9in;
+    width:  3.6in;
+    top: -.60in;
+    margin-bottom: -.9in;
+    display: inline-block;
+  }
+}
+
+div.page.cac {
+  .cacwrapper {
+    -webkit-transform: rotate(90deg) translateY(-8.5in);
+    -webkit-transform-origin-x: 0;
+    -webkit-transform-origin-y: 0;
+    width: 11in;
+    height: 8.5in;
+  }
+  .cac-logo {
+    height: .9in;
+    margin-top: -.2in;
+    margin-left: -.22in;
+  }
+  #client-address th {
+    text-align: right;
+  }
+  #client-address td {
+    width: 3in;
+    border-bottom: 1px solid black;
+  }
+  #case-type th {
+    font-style: italic;
+    font-size: 10pt;
+  }
+  .box {
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+  }
+  #case-numbers .box {
+    width: 1.25in;
+  }
+  #items {
+    width: 100%;
+    border: 1px solid black;
+    border-spacing: 0;
+    font-size: 11pt;
+  }
+  #items .inverted {
+    background-color: black;
+    color: white;
+  }
+  #items .cash-value {
+    text-align: center;
+    font-weight: bold;
+    padding: 4px;
+  }
+  #items td, #items th {
+    height: 1.2em;
+    border: 1px solid black;
+    border-right: 1px solid black;
+  }
+  #items td:first-child {
+    text-align: center;
+  }
+  #items .footer .goods-authorized {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+  }
+  .legal-crap {
+    font-size: 8pt;
+    text-align: center;
+  }
+  .sig {
+    border-bottom: 1px solid black;
+    height: 1.5em;
+  }
+  #client-sig {
+    border: 2px solid black;
+  }
+  #client-sig tr:last-child td {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #client-sig label {
+    text-align: center;
+    margin: auto;
+    display: block;
+  }
+  .fields {
+    width: 100%;
+    border-spacing: 0;
+    borader: 1px solid black;
+  }
+  .fields td {
+    border: 1px solid black;
+    height: 3em;
+    vertical-align: top;
+    text-align: center;
+    font-weight: bold;
+  }
+  .fields td span {
+    line-height: 1.7;
+  }
+  .fields td label {
+    float: left;
+    font-weight: normal;
+  }
+  #form-no {
+    float: right;
+  }
+  #form-list {
+    width: 100%;
+    text-align: center;
+  }
+  #card-info {
+    float: right;
+    text-align: center;
+    font-size: 90%;
+  }
+  #card-number {
+    font-size: 16pt;
+    font-weight: bold;
+    font-afamily: sans-serif;
+    letter-spacing: 2px;
+  }
+  h2, h3 {
+    padding: 0;
+    margin: 0;
+  }
+  #logo-date {
+    float: left;
+  }
+  #logo {
+    width: 2in;
+    height: .5in;
+    /*border: 1px solid black;*/
+  }
+  #date {
+    margin-top: .5em;
+  }
+  #date-box {
+    display: inline-block;
+    border: 1px solid black;
+    height: 1.3em;
+    width: 2in;
+  }
+  #chapter-address {
+    diasplay: inline-block;
+  }
+  #address-box {
+    border: 1px solid black;
+    padding: .5em;
+    font-size: 10pt;
+  }
+  #chapter-address small {
+    text-align: center;
+    display: block;
+  }
+  #info-table {
+    width: 100%;
+  }
+  .indent {
+    padding-left: 2em;
+  }
+  .empty {
+    content: "xxx";
+  }
+
+  .sig-image.client-signature-image {
+    height: .9in;
+    width:  3.6in;
+    float: left;
+    top: -.85in;
+    margin-bottom: -.9in;
+    float: right;
+  }
+  .sig-image.authorizors {
+    float: right;
+    height: .5in;
+    margin-bottom: -.5in;
+    top: -.23in;
+    width: 2in;
+    display: inline-block;
+  }
+}

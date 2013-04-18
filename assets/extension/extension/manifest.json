@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "DAT Casework System",
+  "description": "",
+  "version": "1",
+  "app": {
+    "urls": [
+      "*://dat.iriscouch.com"
+    ],
+    "launch": {
+      "web_url": "https://dat.iriscouch.com/forms/_design/data/index.html",
+      "container": "panel"
+    }
+  },
+  "permissions": [
+    "geolocation",
+    "unlimitedStorage"
+  ]
+}

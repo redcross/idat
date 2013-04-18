@@ -1,0 +1,194 @@
+<div class="page incident">
+  <h1>
+    <img class="logo" src="sc_static('arcbalogo.jpg')" />
+    Incident Report
+  </h1>
+  <table class="blockfields">
+    <tr>
+      <td>
+        <label>Incident Date:</label>
+        <span>{{formattedIncidentDate}}</span>
+      </td>
+      <td>
+        <label>Incident No:</label>
+        <span>{{incidentNumber}}</span>
+      </td>
+      <td>
+        <label>CAS Incident No:</label>
+        <span>{{casIncidentNumber}}</span>
+      </td>
+    </tr>
+  </table>
+  <table class="blockfields">
+    <tr>
+      <td>
+        <label>Incident Type:</label>
+        <span>{{lookup incidentTypes incidentType}}</span>
+      </td>
+      <td>
+        <label>Structure Type:</label>
+        <span>{{lookup residenceTypes defaultResidenceType}}</span>
+      </td>
+      <td>
+        <label>Incident Verified By:</label>
+        <span>{{lookup verifiedBy verifiedBy}}</span>
+      </td>
+    </tr>
+  </table>
+  <table class="blockfields">
+    <tr>
+      <td>
+        <label>Incident Scene/Event/Reporting Address:</label>
+        <table class="fields">
+          <tr>
+            <th>Address:</th>
+            <td colspan="3">{{address}}</td>
+          </tr>
+          <tr>
+            <th>City:</th>
+            <td colspan="3">{{city}}</td>
+          </tr>
+          <tr>
+            <th>County:</th>
+            <td>{{county.name}}</td>
+            <th>Zip:</th>
+            <td>{{zip}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <label>Total Structural Damage:</label>
+        <table class="fields">
+          <tr>
+            <td>{{unitsDestroyed}}</td>
+            <th>Destroyed</th>
+            <th class="spacer" style="width:.2in"></th>
+            <td>{{unitsMajor}}</td>
+            <th>Major</th>
+          </tr>
+          <tr>
+            <td>{{unitsMinor}}</td>
+            <th>Minor</th>
+            <th class="spacer" style="width:.2in"></th>
+            <td>{{unitsUndamaged}}</td>
+            <th>No Damage</th>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <label>Number Of:</label>
+        <table class="fields">
+          <tr>
+            <th>Injured</th>
+            <td>{{peopleInjured}}</td>
+          </tr>
+          <tr>
+            <th>Hospitalized</th>
+            <td>{{peopleHospitalized}}</td>
+          </tr>
+          <tr>
+            <th>Deceased</th>
+            <td>{{peopleDeceased}}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <table class="blockfields">
+    <tr>
+      <td>
+        <label>Number of Units Affected:</label><br />
+        <span>{{unitsAffected}}</span>
+      </td>
+      <td style="width: 2in">
+        <label>Number of People Affected:</label>
+        <table class="fields affected">
+          <tr>
+            <th>Adults</th>
+            <td>{{totalAdults}}</td>
+          </tr>
+          <tr>
+            <th>Children (&lt;18)</th>
+            <td>{{totalChildren}}</td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <td>{{totalAffected}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <label>Number Of Families Affected:</label><br />
+        <span>{{totalFamilies}}</span>
+      </td>
+      <td>
+        <label>Vehicles Responded:</label>
+        <br /><span>
+        {{#staticeach vehicles}}
+          √ {{lookup vehicles}} <br />
+        {{/staticeach}}
+        </span>
+      </td>
+    </tr>
+  </table>
+  <table class="fields times" style="border: 1px solid black; padding: 10px">
+    <tr>
+      <th>Notification Of Incident</th>
+      <th>Time:</th>
+      <td>{{timeNotified}}</td>
+    </tr>
+    <tr>
+      <th>Arrival At Scene</th>
+      <th>Time:</th>
+      <td>{{timeArrived}}</td>
+    </tr>
+    <tr>
+      <th>Departed From Scene</th>
+      <th>Time:</th>
+      <td>{{timeDeparted}}</td>
+    </tr>
+  </table>
+ 
+  <div style="bordaer: 1px solid black; padding: 1em 0">
+    Responders/People Contacted:<br style="clear: both"/>
+    {{#staticeach responders}}
+    <table class="blockfields" style="float: left; width: 30%;">
+      <tr>
+        <td>
+          <label>{{role}}</label>
+          <span>{{name}}</span>
+        </td>
+      </tr>
+    </table>
+    {{/staticeach}}
+    <br style="clear: both" />
+  </div>
+  <hr />
+  <table class="">
+    <tr>
+      <td>
+        <label>Summary Assistance Provided:</label>
+        <span>
+        {{#staticeach summaryAssistance}}
+          √ {{lookup summaryAssistanceGiven}}
+        {{/staticeach}}
+        </span>
+      </td>
+    </tr>
+  </table>
+  <table class="">
+    <tr>
+      <td>
+        <label>Brief Narrative &amp; Remarks:</label><br /><br />
+        {{narrative}}
+      </td>
+    </tr>
+  </table>
+  <hr />
+  <table class="fields">
+    <tr>
+      <th>Person In Charge:</th>
+      <td>{{leadName}}</td>
+    </tr>
+  </table>
+</div>

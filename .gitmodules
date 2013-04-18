@@ -1,0 +1,15 @@
+[submodule "frameworks/pouch_db"]
+	path = frameworks/pouch_db
+	url = git@github.com:jlaxson/sproutcore-pouchdb.git
+[submodule "frameworks/sctable"]
+	path = frameworks/sctable
+	url = git@github.com:jlaxson/sctable.git
+[submodule "frameworks/sproutcore-ui"]
+	path = frameworks/sproutcore-ui
+	url = git@github.com:jlaxson/sproutcore-ui.git
+[submodule "frameworks/signature"]
+	path = frameworks/signature
+	url = git@github.com:jlaxson/sproutcore-signature.git
+[submodule "frameworks/sproutcore"]
+	path = frameworks/sproutcore
+	url = git@github.com:jlaxson/sproutcore

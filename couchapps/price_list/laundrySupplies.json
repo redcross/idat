@@ -1,0 +1,8 @@
+{
+   "_id": "pl_laundrySupplies",
+    "itemClass": 2,
+   "name": "Laundry Supplies",
+   "issuedPerPerson": true,
+   "type": "laundrySupplies",
+   "recordType": "Forms.CACPriceListItem"
+}

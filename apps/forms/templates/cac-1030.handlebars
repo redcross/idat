@@ -1,0 +1,264 @@
+<div class="page cac">
+<div class="cacwrapper">
+  {{#with form}}
+  <table id="info-table">
+    <tr>
+      <td id="logo-date">
+        <div id="logo">
+          <img class="cac-logo" src="sc_static('arcbalogo.jpg')" />
+        </div>
+        <div id="date">
+          <em>Date:</em>{{clientSignature.formattedSignedAt}}
+        </div>
+      </td>
+      <td id="chapter-address">
+        <div id="address-box">
+          {{family.incident.chapter.cacChapterAddress1}}<br />
+          {{family.incident.chapter.cacChapterAddress2}}<br />
+          {{family.incident.chapter.cacChapterAddress3}}<br />
+        </div>
+        <small>Chapter Name and Address</small>
+      </td>
+      <td id="card-info">
+        <h2>Client Assistance Card Authorization</h2>
+        <h3>Card Number</h3>
+        <div id="card-number">{{prettyCardString}}</div>
+      </td>
+    </tr>
+  </table>
+  <table style="clear: both">
+    <tr>
+      <td>
+        <table id="client-address">
+          <tr>
+            <th>Client Name</th>
+            <td class="field">{{family.headOfHousehold.lastName}}, {{family.headOfHousehold.firstName}}</td>
+          </tr>
+          <tr>
+            <th>Street</th>
+            <td class="field">{{family.streetNumber}} {{family.streetName}}</td>
+          </tr>
+          <tr>
+            <th>City, State, Zip</th>
+            <td class="field">{{family.city}} {{family.state}} {{family.zip}}</td>
+          </tr>
+          <tr>
+            <th>Phone Number</th>
+            <td class="field">{{family.preferredPhone}}</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table id="case-type">
+          <tr>
+            <th>Check One</th>
+            <td>Initial <br>Interview √</td>
+            <td>Follow-up <br>Interview &#10063;</td>
+          </tr>
+          <tr>
+            <th>Check One</th>
+            <td colspan="2">Single Family √</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td colspan="2">Multi Family &#10063;</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table id="case-numbers">
+          <tr>
+            <td>Case Number
+            </td>
+            <td class="box">{{family.casCaseNumber}}</td>
+          </tr>
+          <tr>
+            <td>DAT Incident #</td>
+            <td class="box">{{family.incident.incidentNumber}}</td>
+          </tr>
+          <tr>
+            <td>Chapter Incident or DR #</td>
+            <td class="box">{{family.incident.casIncidentNumber}}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <table id="items">
+    <tr class="inverted">
+      <td colspan="5" class="cash-value">This form has NO cash value and may NOT be redeemed for goods or services</td>
+    </tr>
+    <tr>
+      <th>Class</th>
+      <th>Article or description of service authorized</th>
+      <th>Unit Price</th>
+      <th>Amount</th>
+      <th><small>Client<br/>Use</small></th>
+    </tr>
+    {{#staticeach lineItems}}
+      <tr>
+        <td>{{itemClass}}</td>
+        <td>{{description}}</td>
+        <td>{{unitPrice}}</td>
+        <td>${{priceWithoutContingency}}</td>
+        <td></td>
+      </tr>
+      {{#if isHotel}}
+      <tr>
+        <td></td>
+        <td class="indent">{{nightsDescription}}</td>
+        <td></td>
+        <td class="empty">xxx</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="indent">{{hotel.name}} {{hotel.phone}}</td>
+        <td></td>
+        <td class="empty">xxx</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="indent">{{hotel.address1}}</td>
+        <td></td>
+        <td class="empty">xxx</td>
+        <td></td>
+      </tr>
+      <!--<tr>
+        <td></td>
+        <td class="indent">{{hotel.address2}}</td>
+        <td></td>
+        <td class="empty">xxx</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="indent">{{hotel.phone}}</td>
+        <td></td>
+        <td class="empty">xxx</td>
+        <td></td>
+      </tr>-->
+      <tr>
+        <td>{{itemClass}}</td>
+        <td style="text-align:right;">25% Contingency</td>
+        <td></td>
+        <td>${{contingencyPrice}}</td>
+        <td></td>
+      </tr>
+      {{/if}}
+    {{/staticeach}}
+    {{#staticeach blankLines}}
+      <tr>
+        <td></td>
+        <td class="indent"></td>
+        <td></td>
+        <td class="empty">xxx</td>
+        <td></td>
+      </tr>
+    {{/staticeach}}
+    
+    <tr class="footer">
+      <td colspan="3" class="goods-authorized">
+        Total value of goods and services authorized
+      </td>
+      <td colspan="2">
+        ${{total}}
+      </td>
+    </tr>
+  </table>
+  <table id="client-sig">
+    <tr>
+      <td colspan="3" class="legal-crap">
+        <em>CLIENT CERTIFICATION OF RECEIPT OF THE RED CROSS <i>CLIENT ASSISTANCE CARD</i> AND ACKNOWLEDGMENT OF GOODS/SERVICES AUTHORIZED:</em>
+        I certify that I have received the American Red Cross CLIENT ASSISTANCE CARD with the account number shown above.  I agree to use this CLIENT ASSISTANCE CARD to obtain only the goods and services listed above related to needs resulting from a disaster.  I also acknowledge that I will not be issued funds for items for which I have already been assisted as noted above.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="sig">
+          {{clientSignature.name}}
+        </div>
+        <label>Signature (and relationship if not client)</label>
+        <div class="sig-image client-signature-image"></div>
+      </td>
+      <td>
+        <div class="sig">{{clientSignature.formattedSignedAt}}</div>
+        <label>Date</label>
+      </td>
+      <td>
+        <div class="sig">{{identificationString}}</div>
+        <label>Signer's Identification</label>
+      </td>
+    </tr>
+  </table>
+  <table class="fields">
+    <tr>
+      <td style="text-align: left;">
+        <label>Authorized By:</label><br />
+        <span>{{authorizedSignature.name}}</span>
+        <div class="sig-image authorizors authorized-signature-image"></div>
+      </td>
+      <td style="text-align: left;">
+        <label>Supervisor's Approval</label><br />
+        <span>{{supervisorSignature.name}}</span>
+        <div class="sig-image authorizors supervisor-signature-image"></div>
+      </td>
+      <td>
+        <label>Name of Activator</label><br />
+        <span>{{activatedBy}}</span>
+      </td>
+      <td>
+        <label>Access Code</label><br />
+        <span>{{accessCode}}</span>
+      </td>
+    </tr>
+  </table>
+  <table class="fields">
+    <tr>
+      <td><label>Chapter Code</label><br /><span>{{family.incident.chapter.code}}</span></td>
+      <td><label>County Code</label><br /><span>{{family.incident.county.code}}</span></td>
+      <td><label>List No.</label>
+      </td>
+      <td><label>Audited By:</label>
+      </td>
+    </tr>
+  </table>
+  {{/with}}
+  <div class="footer">
+    <div class="legal-crap">
+      {{copyDescription}}
+    </div>
+  </div>
+  <span class="showmenot client-data" {{bindAttr data-svg="form.clientSignature.image"}} ></span>
+  <span class="showmenot authorized-data" {{bindAttr data-svg="form.authorizedSignature.image"}} ></span>
+  <span class="showmenot supervisor-data" {{bindAttr data-svg="form.supervisorSignature.image"}} ></span>
+  <script>
+  $(document).ready(function() {
+    $(".page.cac").each(function(idx, page) {
+      ["client", 'authorized', 'supervisor'].forEach(function(what) {
+        var svgstr = $(page).find('.' + what+'-data').data('svg');
+        if (svgstr && svgstr !== '' && svgstr !== 'undefined') {
+          var newsvgstr = atob(svgstr.slice(26)).replace(/stroke-width="2"/g, 'stroke-width="5"');
+
+          var svghost = $(page).find('.' + what+'-signature-image')[0];
+          $(svghost).html(newsvgstr)
+
+          var svg = $(svghost).find('svg')[0];
+          var paths = $(svg).find('path')
+          var clientHeight = $(svghost).height(), clientWidth = $(svghost).width();
+          var scaleX = clientHeight/svg.getBBox().height, scaleY = clientWidth/svg.getBBox().width, scale = Math.min(scaleX, scaleY);
+
+          //console.log($(svghost).height());
+          //console.log(what, svg, svghost, svg.getBBox().height, clientHeight, scale);
+
+          //svg.style.webkitTransform = 'scale('+Math.min(scale, 1.0)+')';
+          $(svg).find('path').css('-webkit-transform', 'scale('+Math.min(scale, 1.0)+')');
+        }
+        
+      })
+    })
+  });
+  </script>
+</div>
+</div>

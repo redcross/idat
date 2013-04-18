@@ -1,0 +1,8 @@
+{
+   "_id": "pl_groceries",
+    "itemClass": 2,
+   "name": "Groceries and Food for 1 Week",
+   "issuedPerPerson": true,
+   "type": "food",
+   "recordType": "Forms.CACPriceListItem"
+}

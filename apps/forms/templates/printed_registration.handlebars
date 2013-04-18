@@ -1,0 +1,225 @@
+<div class="page registration">
+  <div id='line1'>
+    <div id='header-text'>
+      <h1>
+        <img class="logo" src="sc_static('arcbalogo.jpg')" />
+        Disaster Client Registration
+      </h1>
+    </div>
+  </div>
+  <table id='incidentNumbers' class="fields">
+    <tr>
+      <th>Incident Nbr:</th>
+      <td>{{incident.incidentNumber}}</td>
+      <th>Incident Date:</th>
+      <td>{{incident.formattedIncidentDate}}</td>
+      <th>CAS Incident Nbr:</th>
+      <td>{{incident.casIncidentNumber}}</td>
+      <th>CAS Case Nbr:</th>
+      <td>{{casCaseNumber}}</td>
+    </tr>
+  </table>
+  <table class="fields">
+    <tr>
+      <th>Incident Type:</th><td>{{lookup incidentTypes incident.incidentType}}</td>
+      <th>Dwelling Type:</th><td>{{lookup residenceTypes residenceType}}</td>
+    </tr>
+  </table>
+  <table id="address-info-1" class="fields">
+    <tr>
+      <th>Incident Address</th>
+      <td>{{streetNumber}} {{streetName}}</td>
+      <th>Unit No:</th>
+      <td>{{unitNumber}}</td>
+      <th>Cross St:</th>
+      <td>{{crossStreet}}</td>
+    </tr>
+  </table>
+  <table id="address-info-2" class="fields">
+    <tr>
+      <th>City:</th>
+      <td>{{city}}, {{state}}</td>
+      <th>Zip:</th>
+      <td>{{zip}}</td>
+      <th>Pre-Disaster Phone No:</th>
+      <td></td>
+    </tr>
+  </table>
+  <table id="contact-info" class="fields">
+    <tr>
+      <th>Post Incident Address or Hotel:</th>
+      <td></td>
+      <th>Preferred Phone No:</th>
+      <td>{{preferredPhone}} ({{preferredPhoneType}})</td>
+    </tr>
+  </table>
+  <table id="residents" class="borders">
+    <tr>
+      <td colspan="3" style="widath: 100%">
+        Primary Household Language:
+        <span class="field-">{{lookup languages language}}</span>
+      </td>
+      <td colspan="4" class="disposition-legend">
+        <table>
+          <tr>
+            <td><em>D</em> Deceased</td>
+            <td><em>I</em> Injured</td>
+          </tr>
+          <tr>
+            <td><em>H</em> Hospitalized</td>
+            <td><em>M</em> Missing</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <em>OK</em>
+              Not Applicable
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr class="header">
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>At Scene?</th>
+      <th>Age</th>
+      <th>M/F</th>
+      <th>Relationship to<br /> Head of Household</th>
+      <th>D/I/H/M/OK</th>
+    </tr>
+    {{#staticeach residents}}
+    <tr class="content">
+      <td>{{lastName}}</td>
+      <td>{{firstName}}</td>
+      <td>{{#if atScene}}Yes{{else}}No{{/if}}</td>
+      <td>{{age}}</td>
+      <td>{{gender}}</td>
+      <td>{{relationship}}</td>
+      <td>{{disposition}}</td>
+    </tr>
+    {{/staticeach}}
+  </table>
+  <table>
+    <tr>
+      <td>
+        <em>Head of Household identified by:</em>
+        <div>{{lookup identificationTypes identifiedBy}} {{identificationDetails}}</div>
+      </td>
+      <td>
+        <div>Pets: {{#if hasPets}}√ Yes{{else}}√ No{{/if}}</div>
+        {{#if hasPets}}
+        <div>Type/Status:</div>
+        <div>{{petDetails}}</div>
+        {{/if}}
+      </td>
+    </tr>
+  </table>
+  <hr />
+  <div id="landlord">
+    <table>
+      <tr>
+        <td rowspan="2"><em>Landlord:</em></td>
+        <td>Name:</td>
+        <td class="field blank">{{landlordName}}</td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td class="field blank">{{landlordPhone}}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <em>Residence Is:</em>
+    <span>{{lookup ownershipTypes ownershipType}}</span>
+  </div>
+  <div>
+    <em>Insurance: </em>
+    <span>{{lookup insuranceTypes insurance}}</span>
+  </div>
+  <div>
+    <em>Assistance Given: </em>
+    {{#staticeach assistanceGiven}}
+    <span>√ {{lookup assistanceGiven}}</span>
+    {{/staticeach}}
+  </div>
+  <hr style="clear: both;" />
+  <div style="line-height: 1.8em">
+    <div>
+      <em>1475: </em>
+      {{#lookupeach form1475 form1475Needs}}
+      <span>√ {{title}}</span>
+      {{/lookupeach}}
+    </div>
+    <table class="fields" style="margin: 0">
+      <tr>
+        <th><em>HS Contact &amp; Date of Contact:</em></th>
+        <td>
+      </tr>
+    </table>
+    <div>
+      <em>Release of Confidentiality for:</em>
+      {{#lookupeach releaseAgencies releaseAgencies other=releaseAgencyOther}}
+      <span>√ {{title}}</span>
+      {{/lookupeach}}
+    </div>
+  </div>
+  <div>
+    <em>Additional Information:</em><br />
+    {{#ifnblank email}}<em>Email:</em> {{email}}<br />{{/ifnblank}}
+    {{#ifnblank incomeAmount}}<em>Income Amount:</em> {{incomeAmount}}<br />{{/ifnblank}}
+    {{#ifnblank incomeSource}}<em>Income Source:</em> {{incomeSource}}<br />{{/ifnblank}}
+    {{#ifnblank rentAmount}}<em>Rent Amount:</em> {{rentAmount}}<br />{{/ifnblank}}
+    <br />
+    {{notes}}
+  </div>
+  <hr />
+  <div>
+    <h3>Confirmation of Information</h3>
+    <table class="fields">
+      <tr>
+        <th>Family Representative Signature:</th>
+        <td>
+          {{clientSignature.name}}
+          <div class="sig-image client-signature-image"></div>
+        </td>
+      </tr>
+    </table>
+    <table class="fields">
+      <tr>
+        <th>Red Cross Representative:</th>
+        <td>{{completedBy}}</td>
+      </tr>
+    </table>
+  </div>
+  <div id="footer-text">
+    All information within this document is confidential, and for American Red Cross Use Only
+  </div>
+  <span class="showmenot client-data" {{bindAttr data-svg="clientSignature.image"}} ></span>
+  <script>
+  $(document).ready(function() {
+    $(".page.registration").each(function(idx, page) {
+      ["client"].forEach(function(what) {
+        var svgstr = $(page).find('.' + what+'-data').data('svg');
+        if (svgstr && svgstr !== '' && svgstr !== 'undefined') {
+          var newsvgstr = atob(svgstr.slice(26)).replace(/stroke-width="2"/g, 'stroke-width="5"');
+
+          var svghost = $(page).find('.' + what+'-signature-image')[0];
+          $(svghost).html(newsvgstr)
+
+          var svg = $(svghost).find('svg')[0];
+          var paths = $(svg).find('path')
+          var clientHeight = $(svghost).height(), clientWidth = $(svghost).width();
+          var scaleX = clientHeight/svg.getBBox().height, scaleY = clientWidth/svg.getBBox().width, scale = Math.min(scaleX, scaleY);
+
+          //console.log($(svghost).height());
+          //console.log(what, svg, svghost, svg.getBBox().height, clientHeight, scale);
+
+          //svg.style.webkitTransform = 'scale('+Math.min(scale, 1.0)+')';
+          $(svg).find('path').css('-webkit-transform', 'scale('+Math.min(scale, 1.0)+')');
+        }
+        
+      })
+    })
+  });
+  </script>
+</div>

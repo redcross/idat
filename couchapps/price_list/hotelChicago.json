@@ -1,0 +1,8 @@
+{
+   "_id": "pl_hotel_chicago",
+    "itemClass": 3,
+   "name": "Hotel (ARC Chicago ONLY)",
+   "issuedPerPerson": true,
+   "type": "hotelChicago",
+   "recordType": "Forms.CACPriceListItem"
+}

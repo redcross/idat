@@ -1,0 +1,8 @@
+{
+   "_id": "pl_transportation",
+    "itemClass": 2,
+   "name": "Transportation",
+   "issuedPerPerson": true,
+   "perPersonPrice": 40,
+   "recordType": "Forms.CACPriceListItem"
+}

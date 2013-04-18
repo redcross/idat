@@ -1,0 +1,9 @@
+{
+   "_id": "pl_laundryCoinOp",
+   "itemClass": 2,
+   "name": "Laundry, Coin-Op",
+   "issuedPerPerson": true,
+   "type": "laundryCoinOp",
+   "recordType": "Forms.CACPriceListItem",
+   "test": 123321
+}

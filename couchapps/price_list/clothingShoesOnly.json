@@ -1,0 +1,8 @@
+{
+   "_id": "pl_clothingShoesOnly",
+    "itemClass": 2,
+   "name": "Shoes Only",
+   "issuedPerPerson": true,
+   "perPersonPrice": 20,
+   "recordType": "Forms.CACPriceListItem"
+}

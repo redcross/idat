@@ -1,0 +1,54 @@
+<div class="info">
+	<div class="address">
+		<div>
+			<h2>{{language.Address}}</h2>
+			{{#boundif content.unitNumber}}Apt/Unit {{content.unitNumber}}<br />{{/boundif}}
+			{{content.streetNumber}} {{content.streetName}}<br />
+			{{content.city}}, {{content.state}} {{content.zip}}<br />
+			{{language.Phone}}: {{content.phoneNumber}} ({{content.phoneType}})<br />
+			<br />
+		</div>
+	</div>
+	<div class="residents">
+		<h2>{{language.Residents}}</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>{{language.Name}}</th>
+					<th>{{language.AtScene}}</th>
+					<th>{{language.Age}}</th>
+					<th>{{language.MF}}</th>
+					<th>{{language.RelationshipToHOH}}</th>
+				</tr>
+			</thead>
+			{{collection Forms.ResidentsTemplate contentBinding="Forms.residents.arrangedObjects"}}
+		</table>
+	</div>
+</div>
+<br style="clear: both">
+
+<div class="agencies">
+	<h2>{{language.InformationRelease}}</h2>
+	{{language.InformationReleaseLong}}<br />
+	{{#collection SC.TemplateCollectionView contentBinding="Forms.family.releaseAgencies" languageBinding=".parentView.language"}}
+		{{view Forms.LocalizedTemplateView valueBinding=".parentView.content" languageBinding="Forms.family.clientLanguageDisplay"}}
+	{{/collection}}
+	{{#if content.releaseAgencyOther}}
+	<ul>
+		<li>{{content.releaseAgencyOther}}</li>
+	</ul>
+	{{/if}}
+	{{language.InformationReleaseWhy}}
+</div>
+
+<div class="disclaimer">
+	<br />
+	<h2>{{language.YourAcceptance}}</h2>
+	<h3>{{language.InformationCorrectDisclaimer}}</h3>
+	<h3>{{language.AssistanceIsAGift}}</h3>
+	<p>{{language.PleaseSign}}</p>
+</div>
+
+<div class="signature">
+	{{view Signature.SignatureView valueBinding=".pane.signatureValue" imageDataBinding=".pane.signatureImageData"}}
+</div>

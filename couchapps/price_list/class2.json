@@ -1,0 +1,8 @@
+{
+   "_id": "pl_class2",
+   "itemClass": 2,
+   "name": "Other Class 2",
+   "issuedPerPerson": true,
+   "recordType": "Forms.CACPriceListItem",
+   "hasCustomDescription": true
+}

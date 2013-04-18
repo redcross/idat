@@ -1,0 +1,24 @@
+# ==========================================================================
+# Project:   Forms
+# Copyright: @2012 My Company, Inc.
+# ==========================================================================
+
+# This is your Buildfile for your app, Forms. This tells SproutCore
+# how to build your app. These settings override those in your project
+# Buildfile, which contains default settings for all apps in your project.
+
+# It is better to add :required targets here than in the global Buildfile.
+config :forms, :required => [
+  :sproutcore, 
+  :"sproutcore/experimental/forms", 
+  :sctable,
+  :"sproutcore/template_view", 
+  :signature, 
+  :'sproutcore-ui/calendar', 
+  :'sproutcore-ui/standard_theme', 
+  :'pouch_db'],
+  :title => 'iDAT'
+
+mode :debug do
+  config :forms, title: 'iDAT (Dev)'
+end

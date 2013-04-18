@@ -1,0 +1,8 @@
+{
+   "_id": "pl_cleaningSupplies",
+    "itemClass": 2,
+   "name": "Cleaning Supplies",
+   "issuedPerPerson": false,
+   "perFamilyPrice": 15,
+   "recordType": "Forms.CACPriceListItem"
+}

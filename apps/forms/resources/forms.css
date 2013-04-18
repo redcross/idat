@@ -1,0 +1,81 @@
+@font-face {
+  font-family: Akzidenz-Grotesk;
+
+  src: sc_static("akzidenzgrotesk-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: Akzidenz-Grotesk-Bold;
+
+  src: sc_static("akzidenzgrotesk-bold-webfont.woff") format("woff");
+  font-weight: bold;
+}
+
+$theme.sc-view {
+  font-family: Akzidenz-Grotesk, Helvetica, Arial, sans-serif;
+  color: #6D6E70;
+}
+
+$theme.sc-button-view.dark {
+  color: #ddd;
+}
+
+$theme.sc-list-item-view:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+$theme.sc-source-list .sc-list-item-view {
+  background-color: inherit;
+}
+
+$theme.sc-list-item-view.sel {
+  background-color: #608AB9;
+}
+
+$theme.sc-segment-view.sel {
+  color: white;
+}
+
+$theme.button.sel, $theme.button.def {
+  color: white;
+}
+
+$theme.sc-modal {
+  abackground-color: rgba(0,0,0,.5);
+}
+
+$theme.sc-tab-view > $theme.sc-segmented-view {
+  z-index: 1;
+}
+
+$theme.sc-alert .header {
+  background: none !important;
+}
+
+$theme.sc-image-view img {
+  border-radius: 10px;
+}
+
+$theme.sc-form-view {
+  background-color: white;
+  border-radius: 10px;
+}
+
+$theme.segment img.icon {
+  float: left;
+  margin-left: 9px;
+  margin-right: -5px;
+}
+
+$theme.sc-table-data-view .sc-dataview-row.sel .sc-label-view {
+  font-weight: normal !important;
+}
+
+.ace.collection.bedrooms-collection {
+  background: transparent;
+}
+
+.sc-list-item-view img.icon {
+  width: 16px;
+  height: 16px;
+}

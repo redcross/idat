@@ -1,0 +1,8 @@
+{
+   "_id": "pl_seasonalGarments",
+    "itemClass": 2,
+   "name": "Seasonal Garments",
+   "issuedPerPerson": true,
+   "perPersonPrice": 60,
+   "recordType": "Forms.CACPriceListItem"
+}

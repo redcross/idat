@@ -1,0 +1,89 @@
+<h1>Red Cross Assistance - Client Agreements</h1>
+{{#with content}}
+<table>
+  <tr>
+    <th>
+      <h2>Instructions</h2>
+    </th>
+    <td>
+      This page contains important information about the assistance the American Red Cross is providing.  Please read each section carefully.  If you have any questions, please ask the Red Cross caseworker assisting you.  When you are done, we will ask for your signature to show that you have read and understand these details.
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <h2>Details</h2>
+    </th>
+    <td>
+      My name is <em>{{hohName}}</em>.  I live at 
+      <em>{{streetNumber}} {{streetName}}, 
+      {{#ifnblank unitNumber}}Unit/Apt {{unitNumber}},{{/ifnblank}}
+      {{city}}, {{state}} {{zip}}</em>,
+
+      with {{listOfResidents}}.  My residence is {{lookup ownershipTypes ownershipType}}{{#if insurance}} and I have {{lookup insuranceTypes insurance key="inSig"}} insurance{{/if}}.  <em>I can be reached on my {{preferredPhoneType}} phone at {{preferredPhone}}.</em>  If any of this information, or the information below is not correct, I will inform the Red Cross caseworker assisting me.
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <h2>Privacy</h2>
+    </th>
+    <td>
+      The American Red Cross respects the privacy of its clients.  We will honor your wishes when sharing information about your needs.  I authorize the American Red Cross to share my information with and receive information from the specific individuals/organizations (landlord, etc.) listed here:<br />
+      {{#lookupeach releaseAgencies releaseAgencies other=releaseAgencyOther}}
+      <em>{{title}}</em><br />
+      {{/lookupeach}}
+    </td>
+  </tr>
+  {{#if regularCacForm.isIssuing}}
+  <tr>
+    <th>
+      <h2>Financial Assistance</h2>
+    </th>
+    <td>
+      I have been or will be given the Client Assistance Card with the number ending in {{regularCacForm.cardLast4}}.  The card contains <em>${{regularCacForm.total}}</em>, which has been calculated as: <em>{{regularCacForm.contentsDescription}}</em>.  I understand that money for these purposes will not be reissued.  I will not use the card to purchase Alcohol, Tobacco, or Firearms.
+    </td>
+  </tr>
+  {{/if}}
+  {{#if hotelCacForm.isIssuing}}
+  <tr>
+    <th>
+      <h2>Temporary Housing</h2>
+    </th>
+    <td>
+      {{#with hotelCacForm.lineItems.firstObject}}
+      The Red Cross has arranged temporary housing for me at <em>{{hotel.name}}, located at {{hotel.address1}} in {{hotel.address2}}</em>.  The reservation has been made for {{numberOfNights}} nights, and I must check out on {{dateFormat checkOutDate format="%A, %B %d"}} unless I make other arrangements with the Red Cross.
+      {{/with}}
+    </td>
+  </tr>
+  {{/if}}
+  {{#if isIssuingCacs}}
+  <tr>
+    <th>
+      <h2>Client Assistance Card<br />
+      Terms and Conditions</h2>
+    </th>
+    <td>
+      <p>I have been given the Client Assistance Card Terms and Conditions sheet, and a Red Cross caseworker has explained the contents to me.</p>
+
+      <p>I agree to use this CLIENT ASSISTANCE CARD to obtain only the goods and services listed above related to needs resulting from a disaster. I also acknowledge that I will not be issued funds for items for which I have already been assisted as noted above. I have received a copy of and agree to the associated CLIENT ASSISTANCE CARD Terms and Conditions.</p>
+    </td>
+  </tr>
+  {{/if}}
+  <tr>
+    <th>
+      <h2>Red Cross Followup</h2>
+    </th>
+    <td>
+      <p>This is not the only assistance the American Red Cross can or will provide.  In order for the Red Cross to help me as much as possible, <em>I will make an appointment to visit the office at 1663 Market St as soon as possible by calling 415-427-8010.</em> {{#if hotelCacForm.isIssuing}}This appointment must happen before the day I am supposed to check out of my hotel.{{/if}}</p>
+      <p>I understand that all of the assistance given by the American Red Cross is a gift of the American people, and never needs to be repaid</p>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <h2>Next</h2>
+    </th>
+    <td>
+      Click the button to go to the signature screen.
+    </td>
+  </tr>
+</table>
+{{/with}}

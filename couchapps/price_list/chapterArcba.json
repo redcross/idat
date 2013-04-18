@@ -1,0 +1,13 @@
+{
+   "_id": "chapter_arcba",
+   "name": "ARC Bay Area",
+   "code": "05503",
+   "counties": [
+       "county_arcba_sf",
+       "county_arcba_al"
+   ],
+   "recordType": "Forms.Chapter",
+   "cacChapterAddress1": "American Red Cross Bay Area Chapter",
+   "cacChapterAddress2": "1663 Market St.",
+   "cacChapterAddress3": "San Francisco, CA 94103"
+}

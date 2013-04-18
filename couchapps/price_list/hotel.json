@@ -1,0 +1,8 @@
+{
+   "_id": "pl_hotel",
+    "itemClass": 3,
+   "name": "Hotel",
+   "issuedPerPerson": true,
+   "type": "hotel",
+   "recordType": "Forms.CACPriceListItem"
+}

@@ -1,0 +1,8 @@
+{
+   "_id": "pl_dryCleaning",
+    "itemClass": 2,
+   "name": "Dry Cleaning",
+   "issuedPerPerson": true,
+   "perPersonPrice": 15,
+   "recordType": "Forms.CACPriceListItem"
+}

@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/jlaxson/Documents/Red Cross/Development/forms",
+			"folder_exclude_patterns": [".bundle", "tmp", "couch/_attachments", "bin"],
+      "file_exclude_patterns": ["*.sublime*"]
+		}
+	]
+}

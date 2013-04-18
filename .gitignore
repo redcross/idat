@@ -1,0 +1,12 @@
+couch/_attachments
+tmp
+.bundle
+.DS_Store
+bin
+*.sublime-workspace
+build-private.sh
+*.pem
+*.crx
+Gemfile
+Gemfile.lock
+.rvmrc
